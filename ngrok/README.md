@@ -1,36 +1,22 @@
-## Welcome to Ngrok
+## Ngrok 搭建及https证书签名
 
-You can use the [editor on GitHub](https://github.com/Johnny-Liang/Johnny-Liang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+微信公众平台二次开发时，服务器必须要能通过外网访问，而且必须是80接口。我们一般会在自己的电脑上写代码，但是由于电信运营商将80端口屏蔽了，甚至很多人通过无线路由器上网，根本就没有公网ip。在这种情况下，我们每次都要上传代码到服务器对微信公众平台进行接口调试，十分的不方便。而ngro可以将内网映射到一个公网地址，这样就完美的解决了我们的问题。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ngrok官方为我们免费提供了一个服务器，我们只需要下载ngrok客户端即可正常使用，但是后来官方的服务越来越慢，直到ngrok官网被完全屏蔽。现在我们已经无法使用ngrok官方的服务器了。所以，接下来我们自行搭建属于自己的ngrok服务器，为自己提供方便快捷又稳定的服务，一劳永逸。
 
-### Markdown
+### 环境准备
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    #VPS：操作系统为CentOS7（64位）。
+    #域名：将一个域名或二级域名泛解析到VPS服务器上。例如将*.zuduia.com解析到VPS的IP。要注意，此时还需要将tunnel.zuduia.com的A记录设置为VPS的IP。
 
-```markdown
-Syntax highlighted code block
+### 1.安装GIT
 
-# Header 1
-## Header 2
-### Header 3
+    yum install git
+    #注意git版本应大于1.7.9.5
 
-- Bulleted
-- List
+### 2.配置go环境
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Johnny-Liang/Johnny-Liang.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
